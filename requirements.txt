@@ -1,0 +1,28 @@
+# ============================================================
+# Jarvis – Python Dependencies
+# ============================================================
+
+# --- Core meeting-assistant dependencies ---
+
+# Speech-to-text (Google Speech Recognition backend)
+SpeechRecognition>=3.10.0
+
+# Microphone input (required by SpeechRecognition for live capture)
+# On Linux, PyAudio needs portaudio19-dev:
+#   sudo apt-get install portaudio19-dev
+# On macOS:
+#   brew install portaudio
+PyAudio>=0.2.13
+
+# --- Optional / enhanced backends ---
+
+# Whisper local STT backend (heavy – ~1 GB for the 'base' model)
+# openai-whisper>=20231117
+
+# OpenAI API (notes/action-items backends)
+# openai>=1.3.0
+
+# --- Development / testing ---
+
+pytest>=7.4.0
+pytest-cov>=4.1.0
