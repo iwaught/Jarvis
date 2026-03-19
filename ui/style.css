@@ -161,6 +161,10 @@ main {
   50%       { opacity: 0.3; }
 }
 
+.status-error {
+  color: #ef4444;
+}
+
 /* ===== Transcript ===== */
 .transcript-area {
   width: 100%;
@@ -286,6 +290,13 @@ main {
 .toast.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===== No Participants Placeholder ===== */
+.no-participants {
+  font-size: 0.85rem;
+  color: #475569;
+  font-style: italic;
 }
 
 /* ===== Responsive ===== */
