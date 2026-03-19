@@ -1,0 +1,4 @@
+# Archivo de configuración para Jarvis
+settings:
+  debug: true
+  language: es
