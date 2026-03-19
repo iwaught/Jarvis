@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jarvis — Meeting Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <span class="logo">Jarvis</span>
+    <span class="subtitle">Meeting Assistant</span>
+  </header>
+
+  <!-- ===== Main ===== -->
+  <main>
+
+    <!-- 1. Recording Controls -->
+    <div class="card">
+      <p class="card-title">Recording</p>
+      <div class="recording-controls">
+        <button id="btn-start" class="btn btn-primary">
+          🎙️ Start Recording
+        </button>
+        <button id="btn-stop" class="btn btn-danger" disabled>
+          ⏹️ Stop Recording
+        </button>
+      </div>
+      <div class="status-indicator">
+        <span id="status-dot" class="status-dot"></span>
+        <span id="status-text">Not recording</span>
+      </div>
+    </div>
+
+    <!-- 2. Transcript -->
+    <div class="card">
+      <p class="card-title">📄 Transcript</p>
+      <textarea
+        id="transcript"
+        class="transcript-area"
+        placeholder="Start a recording to see the transcript here…"
+        readonly
+      ></textarea>
+    </div>
+
+    <!-- 3. Action Items -->
+    <div class="card">
+      <p class="card-title">✅ Action Items</p>
+      <ul class="action-list" id="action-list">
+        <li>
+          <input type="checkbox" class="action-checkbox" />
+          Complete the list of participants (names unknown — please fill in)
+        </li>
+        <li>
+          <input type="checkbox" class="action-checkbox" />
+          Share updated spec document with the team
+        </li>
+        <li>
+          <input type="checkbox" class="action-checkbox" />
+          Finalize Q2 roadmap priorities by Friday
+        </li>
+        <li class="placeholder">
+          <input type="checkbox" class="action-checkbox" disabled />
+          More action items will appear after recording…
+        </li>
+      </ul>
+    </div>
+
+    <!-- 4. Participants -->
+    <div class="card">
+      <p class="card-title">👥 Participants</p>
+      <div class="participants-grid">
+        <div class="participant-chip">
+          <span class="avatar">A</span>
+          Alice
+        </div>
+        <div class="participant-chip">
+          <span class="avatar">B</span>
+          Bob
+        </div>
+        <div class="participant-chip unknown">
+          <span class="avatar">?</span>
+          Unknown participant
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Send Summary -->
+    <div class="card">
+      <p class="card-title">📧 Send Summary</p>
+      <div class="send-row">
+        <button id="btn-send" class="btn btn-success">
+          📧 Send Summary Email
+        </button>
+        <span class="email-hint">Sends a summary + action items to all participants.</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast notification -->
+  <div id="toast" class="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

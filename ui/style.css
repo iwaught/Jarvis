@@ -1,0 +1,306 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Header ===== */
+header {
+  width: 100%;
+  background: #1a1d2e;
+  border-bottom: 1px solid #2d3148;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header .logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #818cf8;
+  letter-spacing: 1px;
+}
+
+header .subtitle {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* ===== Main Layout ===== */
+main {
+  width: 100%;
+  max-width: 900px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #1a1d2e;
+  border: 1px solid #2d3148;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.card-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+/* ===== Recording Controls ===== */
+.recording-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s, transform 0.1s, opacity 0.15s;
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 3px #818cf866;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: #6366f1;
+}
+
+.btn-danger {
+  background: #dc2626;
+  color: #fff;
+}
+.btn-danger:hover:not(:disabled) {
+  background: #ef4444;
+}
+
+.btn-secondary {
+  background: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid #334155;
+}
+.btn-secondary:hover:not(:disabled) {
+  background: #273449;
+}
+
+.btn-success {
+  background: #16a34a;
+  color: #fff;
+}
+.btn-success:hover:not(:disabled) {
+  background: #22c55e;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== Recording Status Indicator ===== */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 14px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #334155;
+  transition: background 0.3s;
+}
+
+.status-dot.recording {
+  background: #ef4444;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* ===== Transcript ===== */
+.transcript-area {
+  width: 100%;
+  min-height: 130px;
+  background: #0f1117;
+  border: 1px solid #2d3148;
+  border-radius: 8px;
+  padding: 14px 16px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.transcript-area:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+/* ===== Action Items List ===== */
+.action-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.action-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #0f1117;
+  border: 1px solid #2d3148;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.action-list li.placeholder {
+  color: #475569;
+  font-style: italic;
+}
+
+.action-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #4f46e5;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ===== Participants ===== */
+.participants-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.participant-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #0f1117;
+  border: 1px solid #2d3148;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.participant-chip .avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #4f46e5;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.participant-chip.unknown .avatar {
+  background: #475569;
+}
+
+/* ===== Send Summary Row ===== */
+.send-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.email-hint {
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+/* ===== Toast Notification ===== */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  box-shadow: 0 8px 24px #00000060;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.25s, transform 0.25s;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  header {
+    padding: 14px 16px;
+  }
+  main {
+    padding: 20px 14px;
+  }
+  .recording-controls {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
